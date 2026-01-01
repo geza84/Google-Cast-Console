@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VideAI Cast Receiver</title>
+    <!-- Cast Receiver SDK -->
+    <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        #player {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* The Black Box Overlay */
+        #censorOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1000;
+            /* Always on top of video */
+            display: none;
+            /* Hidden by default */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #censorIcon {
+            font-size: 100px;
+            color: #FFC107;
+            /* Amber warning color */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Standard Cast Video Element -->
+    <cast-media-player id="player"></cast-media-player>
+
+    <!-- Visual Blocking Layer -->
+    <div id="censorOverlay" style="display: none;">
+        <div id="censorIcon">⚠️ CENSORED SCENE</div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
