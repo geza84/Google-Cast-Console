@@ -32,8 +32,7 @@
             z-index: 1000;
             /* Always on top of video */
             display: none;
-            /* Hidden by default */
-            display: flex;
+            /* Hidden by default - JS will change to 'flex' */
             justify-content: center;
             align-items: center;
         }
@@ -51,7 +50,7 @@
     <cast-media-player id="player"></cast-media-player>
 
     <!-- Visual Blocking Layer -->
-    <div id="censorOverlay" style="display: none;">
+    <div id="censorOverlay">
         <div id="censorIcon">⚠️ CENSORED SCENE</div>
     </div>
 
